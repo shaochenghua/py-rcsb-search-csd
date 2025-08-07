@@ -24,25 +24,25 @@ python searchCsd.py -h
 ```
 
 ## testing examples and expected output/result
-run test case on GLC ligand, for the default substructure search, using model coordinates
+*run test case on GLC ligand, for the default substructure search, using model coordinates
 ```
 python searchCsd.py -i GLC
 ```
 then check data/GLC folder for results in GLC-model-substructure.tsv
 
-run substructure search using ideal coordinates
+*run substructure search using ideal coordinates
 ```
 python searchCsd.py -i GLC -c ideal
 ```
 then check data/GLC folder for results in GLC-ideal-substructure.tsv
 
-run similarity search
+*run similarity search
 ```
 python searchCsd.py -i GLC -s similarity
 ```
 then check data/GLC folder for results in GLC-model-similarity.tsv
 
-Metal ligands may fail the conversion from CIF to MOL/MOL2/SDF, you can use the option -u to use the existing SDF generated for PDB website
+*run search using existing SDF. Metal ligands may fail the conversion from CIF to MOL/MOL2/SDF, you can use the option -u to use the existing SDF generated for PDB website
 ```
 python searchCsd.py -i SF4 -u
 ```
