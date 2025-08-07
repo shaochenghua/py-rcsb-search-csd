@@ -1,4 +1,4 @@
-source /users/chenghua/CCDC/ccdc-software/csd-python-api/miniconda/bin/activate
+source ~/CCDC/ccdc-software/csd-python-api/miniconda/bin/activate
 #!/bin/bash
 
 # Replace 'my_command' with the actual command you want to locate

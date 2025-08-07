@@ -2,31 +2,34 @@ import os
 import subprocess
 import sys
 import logging
-# import mmcif
 
 THIS_DIR = os.path.dirname(os.path.abspath(__file__))
 SRC_DIR = os.path.dirname(THIS_DIR)
 UTIL_DIR = os.path.join(SRC_DIR, 'util')
 ROOT_DIR = os.path.dirname(SRC_DIR)
 DATA_DIR = os.path.join(ROOT_DIR, 'data')
+if not os.path.exists(DATA_DIR):
+    os.makedirs(DATA_DIR)
 LOG_DIR = os.path.join(ROOT_DIR, 'log')
+if not os.path.exists(LOG_DIR):
+    os.makedirs(LOG_DIR)
 
 sys.path.insert(0, SRC_DIR)
 
-log_format = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(module)s - %(funcName)s:%(lineno)d - %(message)s')
-fp_log = os.path.join(LOG_DIR, f"{os.path.basename(__file__).split('.')[0]}.log")
-f_handler = logging.FileHandler(fp_log)
-f_handler.setLevel(logging.DEBUG)
-f_handler.setFormatter(log_format)
+# log_format = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(module)s - %(funcName)s:%(lineno)d - %(message)s')
+# fp_log = os.path.join(LOG_DIR, f"{os.path.basename(__file__).split('.')[0]}.log")
+# f_handler = logging.FileHandler(fp_log)
+# f_handler.setLevel(logging.DEBUG)
+# f_handler.setFormatter(log_format)
 
-c_handler = logging.StreamHandler()
-c_handler.setLevel(logging.DEBUG)
-c_handler.setFormatter(log_format)
+# c_handler = logging.StreamHandler()
+# c_handler.setLevel(logging.DEBUG)
+# c_handler.setFormatter(log_format)
 
 logger = logging.getLogger(__name__)
-logger.setLevel(logging.DEBUG)
-logger.addHandler(f_handler)
-logger.addHandler(c_handler)
+# logger.setLevel(logging.DEBUG)
+# logger.addHandler(f_handler)
+# logger.addHandler(c_handler)
 
 
 class OpenBabelProcess:
@@ -47,7 +50,7 @@ class OpenBabelProcess:
         """        
         logger.info(f"To convert {self.fp_in} to {fp_out}.")     
 
-        openbabel_cmd = os.getenv("OPENBABEL_CMD", "/usr/local/bin/obabel")
+        openbabel_cmd = os.getenv("OPENBABELCMD", "/usr/local/bin/obabel")
         l_command = [openbabel_cmd, self.fp_in, "-O", fp_out] + l_options
         logger.info(f"Running command: {' '.join(l_command)}")
 
