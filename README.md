@@ -4,7 +4,7 @@
 ## Contents
 --------------------------------------------
 ```
-activate_csd_python_api.sh  # configuration for conda env var of backend pdb_extract python package and data folder
+activate_csd_python_api.sh  # configuration for conda env
 data/ # output data folder to be generated upon run
 source/  # application code
 source/run/searchCsd.py # code for user to run the search 
@@ -13,12 +13,12 @@ source/run/searchCsd.py # code for user to run the search
 ## Installation
 --------------------------------------------
 ```
-git clone https://github.com/shaochenghua/py-rcsb-search-csd.gi
-cd py-rcsb-search-csd
-source activate_csd_python_api.sh
+git clone https://github.com/shaochenghua/py-rcsb-search-csd.git
 ```
 ## Run 
 ```
+cd py-rcsb-search-csd
+source activate_csd_python_api.sh
 cd source/run
 python searchCsd.py -h
 ```
