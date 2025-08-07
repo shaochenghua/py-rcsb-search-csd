@@ -46,3 +46,9 @@ then check data/GLC folder for results in GLC-model-similarity.tsv
 ```
 python searchCsd.py -i SF4 -u
 ```
+
+* run search on local files of either CIF, or MOL/MOL2/SDF file, assuming you have local file of data/GLC/GLC.cif
+```
+python searchCsd.py -l ../../data/GLC/GLC.cif
+``` 
+The filepath can be either relative path like the one above, or absolute path. The results will still be written into the data folder. 
